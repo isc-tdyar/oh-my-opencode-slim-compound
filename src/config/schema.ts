@@ -54,7 +54,9 @@ export type AgentName =
   | "frontend-ui-ux-engineer"
   | "document-writer"
   | "multimodal-looker"
-  | "code-simplicity-reviewer";
+  | "code-simplicity-reviewer"
+  | "workflow-planner"
+  | "workflow-compounder";
 
 export const DEFAULT_MODELS: Record<AgentName, string> = {
   orchestrator: "google/claude-opus-4-5-thinking",
@@ -65,4 +67,6 @@ export const DEFAULT_MODELS: Record<AgentName, string> = {
   "document-writer": "google/gemini-3-flash",
   "multimodal-looker": "google/gemini-3-flash",
   "code-simplicity-reviewer": "google/claude-opus-4-5-thinking",
+  "workflow-planner": "google/claude-opus-4-5-thinking",
+  "workflow-compounder": "google/claude-opus-4-5-thinking",
 };

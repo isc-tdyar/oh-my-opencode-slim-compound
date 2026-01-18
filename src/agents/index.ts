@@ -8,6 +8,8 @@ import { createFrontendAgent } from "./frontend";
 import { createDocumentWriterAgent } from "./document-writer";
 import { createMultimodalAgent } from "./multimodal";
 import { createSimplicityReviewerAgent } from "./simplicity-reviewer";
+import { createWorkflowPlannerAgent } from "./workflows/planner";
+import { createWorkflowCompounderAgent } from "./workflows/compound";
 
 export type { AgentDefinition } from "./orchestrator";
 
@@ -34,6 +36,8 @@ export const SUBAGENT_INFO = {
   "document-writer": { factory: createDocumentWriterAgent, shortDesc: "docs" },
   "multimodal-looker": { factory: createMultimodalAgent, shortDesc: "image/visual analysis" },
   "code-simplicity-reviewer": { factory: createSimplicityReviewerAgent, shortDesc: "code review" },
+  "workflow-planner": { factory: createWorkflowPlannerAgent, shortDesc: "compound planning" },
+  "workflow-compounder": { factory: createWorkflowCompounderAgent, shortDesc: "auto-document learnings" },
 } as const satisfies Record<SubagentName, SubagentInfo>;
 
 /** Generate agent list string for tool descriptions */

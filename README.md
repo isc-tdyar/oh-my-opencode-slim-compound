@@ -1,16 +1,26 @@
 <div align="center">
 
-# oh-my-opencode-slim
+# oh-my-opencode-slim-compound
 
-**A lightweight, powerful agent orchestration plugin for OpenCode**
+**A lightweight, powerful agent orchestration plugin for OpenCode with Compound Engineering**
 
 <img src="img/team.png" alt="The Pantheon - Agent Team" width="600">
 
 *Transform your AI assistant into a manager capable of delegating complex tasks to specialized sub-agents, running searches in the background, and managing multi-step workflows with ease.*
 
+## 🚀 New: Compound Engineering
+
+**Make each coding task 90% faster by accumulating knowledge.**
+
+First time solving a problem: 30 minutes
+Next time with documented solution: 3 minutes
+**Time saved: 9-10x faster** 🎯
+
+[Learn More →](docs/compound-engineering.md)
+
 </div>
 
-> Slimmed-down fork of [oh-my-opencode](https://github.com/code-yeongyu/oh-my-opencode) - focused on core agent orchestration without the extra bells and whistles.
+> **Enhanced fork** of [oh-my-opencode-slim](https://github.com/alvinunreal/oh-my-opencode-slim) with compound engineering capabilities that make development work progressively easier through systematic knowledge accumulation.
 
 > **[Antigravity](https://antigravity.ai) subscription recommended.** The pantheon is tuned for Antigravity's model routing. Other providers work, but you'll get the best experience with Antigravity.
 
@@ -31,6 +41,8 @@
   - [Document Writer](#document-writer)
   - [Multimodal Viewer](#multimodal-viewer)
   - [Code Simplifier](#code-simplifier)
+  - [**NEW**: Workflow Planner](#workflow-planner) 🎯
+  - [**NEW**: Workflow Compounder](#workflow-compounder) 🎯
 - [🛠️ **Tools & Capabilities**](#tools--capabilities)
   - [Tmux Integration](#tmux-integration)
   - [Quota Tool](#quota-tool)
@@ -321,6 +333,38 @@ Extract text from images, interpret diagrams, analyze UI screenshots, summarize 
 **Prompt:** [src/agents/simplicity-reviewer.ts](src/agents/simplicity-reviewer.ts)
 
 Identify unnecessary complexity, challenge premature abstractions, estimate LOC reduction, enforce minimalism. *Read-only: they judge; The Orchestrator executes the sentence.*
+
+<br clear="both">
+
+---
+
+### Workflow Planner
+
+<a href="src/agents/workflows/planner.ts"><img src="img/planner.png" alt="Workflow Planner" align="right" width="240"></a>
+
+> **The Chronicler** remembers every problem ever solved, every pattern that worked, every solution documented. Before The Orchestrator begins any task, The Chronicler searches the archives: "We've solved this before - let me show you how." They turn 30-minute problems into 3-minute solutions. Knowledge is their weapon; time is their gift.
+
+**Role:** `Knowledge base search and compound planning` 🎯
+**Model:** `google/claude-opus-4-5-thinking`
+**Prompt:** [src/agents/workflows/planner.ts](src/agents/workflows/planner.ts)
+
+Search `~/.config/opencode/compound-knowledge/` before starting work, reference past solutions for 90% time savings, identify applicable patterns, estimate time based on history. *Turn experience into efficiency - never solve the same problem twice.*
+
+<br clear="both">
+
+---
+
+### Workflow Compounder
+
+<a href="src/agents/workflows/compound.ts"><img src="img/compounder.png" alt="Workflow Compounder" align="right" width="240"></a>
+
+> **The Archivist** believes every solved problem is a gift to the future. When work is complete, tests pass, bugs vanish - The Archivist appears unbidden, documenting the journey. They extract solutions, patterns, learnings; categorize, cross-reference, store. The knowledge base grows stronger with each task. Time compounds like interest - and The Archivist is the banker.
+
+**Role:** `Auto-document solutions for compound engineering` 🎯
+**Model:** `google/claude-opus-4-5-thinking`
+**Prompt:** [src/agents/workflows/compound.ts](src/agents/workflows/compound.ts)
+
+Auto-detect solved problems, create solution documents with YAML frontmatter, extract reusable patterns, save to correct category. *Operate autonomously - document immediately when problems are solved, making the next occurrence 90% faster.*
 
 <br clear="both">
 
